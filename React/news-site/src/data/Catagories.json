@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "label": "トップ",
+    "value": "top"
+  },
+  {
+    "id": 2,
+    "label": "新着",
+    "value": "new"
+  },
+  {
+    "id": 3,
+    "label": "ベスト",
+    "value": "best"
+  }
+]
