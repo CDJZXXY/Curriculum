@@ -8,10 +8,14 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "format": "prettier-eslint --write 'src/**/*.{tsx,css,json}'",
+    "format": "prettier --write 'src/**/*.{tsx,css,json}'",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/lab": "^6.0.0-beta.9",
+    "@mui/material": "^6.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -24,8 +28,7 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
-    "prettier-eslint": "^16.3.0",
-    "prettier-eslint-cli": "^8.0.1",
+    "prettier": "3.3.3",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"
