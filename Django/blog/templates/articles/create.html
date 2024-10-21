@@ -1,0 +1,17 @@
+{% extends "articles/base.html" %}
+{% block content %}
+  <h2>記事登録</h2>
+  <form>
+    <div class="mb-3">
+      <label for="inputTitle" class="form-label">記事タイトル</label>
+      <input type="text" class="form-control" id="inputTitle" aria-describedby="titleHelp">
+      <div id="titleHelp" class="form-text">最大50文字</div>
+    </div>
+    <div class="mb-3">
+      <label for="inputContent" class="form-label">記事内容</label>
+      <textarea class="form-control" id="inputContent" aria-describedby="contentHelp" rows="4" cols="50"></textarea>
+      <div id="contentHelp" class="form-text">最大10000文字</div>
+    </div>
+    <button type="submit" class="btn btn-primary">登録</button>
+  </form>
+{% endblock %}
