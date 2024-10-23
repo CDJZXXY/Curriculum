@@ -1,0 +1,19 @@
+{% extends "articles/base.html" %}
+{% block content %}
+  <h2>登録内容確認</h2>
+  <div class="mb-3">
+    <label for="inputTitle" class="form-label">記事タイトル</label>
+    <p>{{ form.title.value }}</p>
+  </div>
+  <div class="mb-3">
+    <label for="inputContent" class="form-label">記事内容</label>
+    <p>{{ form.content.value }}</p>
+  </div>
+  <form method="post" action="{% url 'articles:create_confirm' %}">
+    {% csrf_token %}
+    {{ form.title|attr:"type:hidden" }}
+    {{ form.content|attr:"type:hidden" }}
+    <a href="{% url "articles:create" %}" class="btn btn-outline-primary" role="button">登録画面へ戻る</a>
+    <button type="submit" class="btn btn-primary">登録</button>
+  </form>
+{% endblock content %}

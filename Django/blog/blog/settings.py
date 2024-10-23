@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "articles.apps.ArticlesConfig",
+    "widget_tweaks",
 ]
 
 MIDDLEWARE = [
@@ -66,7 +67,10 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],
-            "builtins": ["django.templatetags.static"],
+            "builtins": [
+                "django.templatetags.static",
+                "widget_tweaks.templatetags.widget_tweaks",
+            ],
         },
     },
 ]

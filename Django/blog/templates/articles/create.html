@@ -1,17 +1,21 @@
 {% extends "articles/base.html" %}
 {% block content %}
   <h2>記事登録</h2>
-  <form>
+  <form method="post">
+    {% csrf_token %}
     <div class="mb-3">
       <label for="inputTitle" class="form-label">記事タイトル</label>
-      <input type="text" class="form-control" id="inputTitle" aria-describedby="titleHelp">
+      <input type="text" class="form-control" id="inputTitle" name="title" value="{{ title }}" aria-describedby="titleHelp">
       <div id="titleHelp" class="form-text">最大50文字</div>
+      {{ form.title.errors }}
     </div>
     <div class="mb-3">
       <label for="inputContent" class="form-label">記事内容</label>
-      <textarea class="form-control" id="inputContent" aria-describedby="contentHelp" rows="4" cols="50"></textarea>
+      <textarea class="form-control" id="inputContent" name="content" rows="8" aria-describedby="contentHelp">{{ content }}</textarea>
       <div id="contentHelp" class="form-text">最大10000文字</div>
+      {{ form.content.errors }}
     </div>
-    <button type="submit" class="btn btn-primary">登録</button>
+    <a href="{% url "articles:list" %}" class="btn btn-outline-primary" role="button">記事一覧へ戻る</a>
+    <button type="submit" class="btn btn-primary">登録内容確認</button>
   </form>
-{% endblock %}
+{% endblock content %}
