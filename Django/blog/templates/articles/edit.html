@@ -1,0 +1,23 @@
+{% extends "articles/base.html" %}
+{% block content %}
+  <h2>記事編集</h2>
+  <p>打印测试：{{ id }}</p>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="inputTitle" class="form-label">記事タイトル</label>
+      {% comment %} {{ form.title|add_class:"form-control"|attr:"aria-describedby=titleHelp" }} {% endcomment %}
+      <input type="text" class="form-control" id="inputTitle" name="title" value="{{ title }}" aria-describedby="titleHelp">
+      <div id="titleHelp" class="form-text">最大50文字</div>
+      {{ form.title.errors }}
+    </div>
+    <div class="mb-3">
+      <label for="inputContent" class="form-label">記事内容</label>
+      <textarea class="form-control" id="inputContent" name="content" rows="8" aria-describedby="contentHelp">{{ content }}</textarea>
+      <div id="contentHelp" class="form-text">最大10000文字</div>
+      {{ form.content.errors }}
+    </div>
+    <a href="{% url "articles:detail" id %}" class="btn btn-outline-primary" role="button">記事詳細へ戻る</a>
+    <button type="submit" class="btn btn-primary">編集内容確認</button>
+  </form>
+{% endblock content %}

@@ -11,8 +11,16 @@ urlpatterns = [
         views.ArticleCreateConfirmView.as_view(),
         name="create_confirm",
     ),
-    path("edit/", views.ArticleEdit),
-    path("edit_confirm/", views.ArticleEditConfirm),
-    path("<int:pk>/detail/", views.ArticleDetailView.as_view(), name="detail"),
-    path("delete_confirm/", views.ArticleDeleteConfirm),
+    path("<int:pk>/edit/", views.ArticleEditView.as_view(), name="edit"),
+    path(
+        "<int:pk>/edit_confirm/",
+        views.ArticleEditConfirmView.as_view(),
+        name="edit_confirm",
+    ),
+    path("<int:pk>/", views.ArticleDetailView.as_view(), name="detail"),
+    path(
+        "<int:pk>/delete_confirm/",
+        views.ArticleDeleteConfirm,
+        name="delete_confirm",
+    ),
 ]
